@@ -2,7 +2,8 @@
     {{ partial "page-header" . }}
 
     <article class="gdoc-markdown">
-        <h1>{{ partial "title" . }}</h1>
         {{ partial "content" . }}
+        Last modified by {{ .GitInfo.AuthorName }} ({{ .GitInfo.AuthorEmail }}) on {{ .GitInfo.AuthorDate }} <br>
+        Commit: {{ .GitInfo.Subject }} ({{ .GitInfo.AbbreviatedHash }})
     </article>
 {{ end }}
